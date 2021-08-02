@@ -11,9 +11,9 @@ module.exports.run = async (bot, message, args) => {
             deny: ['SEND_MESSAGES']
         }
 
-    ])
+    ]);
 
-    message.lineReply("Het kanaal is gelockt.")
+    message.lineReply("Het kanaal is gelockt.");
     
 
 }
