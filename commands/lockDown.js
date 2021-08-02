@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-    if (!message.member.hasPermission("MENTION_EVERYONE")) return message.lineReply("Jij kan dit niet doen.");
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.lineReply("Jij kan dit niet doen.");
 
     await message.channel.overwritePermissions([
 
