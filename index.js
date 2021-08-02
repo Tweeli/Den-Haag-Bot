@@ -46,6 +46,7 @@ bot.on('ready', async () => {
 });
 
 
+//Verwijderd bericht log.
 bot.on("messageDelete", messageDeleted => {
 
 	if (messageDeleted.author.bot) return;
@@ -67,7 +68,7 @@ bot.on("messageDelete", messageDeleted => {
 });
 
 
-//Scheldwoorden
+//Scheldwoorden/bot.
 bot.on('message', async message => {
 	
   if (message.author.bot) return;
