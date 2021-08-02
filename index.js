@@ -47,8 +47,6 @@ bot.on("guildMemberAdd", member => {
 
 	member.roles.add(role);
 
-	if (!channel) return;
-
 	var welkomEmbed = new discord.MessageEmbed()
 		.setTitle("Welkom!")
 		.setDescription(`Welkom in TeamDJD | Den Haag Stad V2 ${member} \nlees zeker even de #「🟢」discord-regels door!
