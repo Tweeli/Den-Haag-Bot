@@ -14,6 +14,7 @@ const bot = new discord.Client({
 bot.commands = new discord.Collection();
 bot.aliases = new discord.Collection();
 
+//Command Handler.
 fs.readdir('./commands/', (err, files) => {
 	if (err) console.log(err);
 
@@ -37,12 +38,36 @@ fs.readdir('./commands/', (err, files) => {
 	});
 });
 
+//Bot Status.
 bot.on('ready', async () => {
 	console.log(`${bot.user.username} Is online!`);
 
 	bot.user.setActivity('Tweeli.#0001.', { type: 'LISTENING' });
 });
 
+
+bot.on("messageDelete", messageDeleted => {
+
+	if (messageDeleted.author.bot) return;
+	
+	var content = messageDeleted.content;
+	if (!content) content = "Geen tekst meegegeven.";
+
+	var respone = `Bericht ${messageDeleted.id} is verwijderd uit ${messageDeleted.channel} \n **Bericht:** ${content}`;
+
+	var deletedContentEmbed = new discord.MessageEmbed()
+		.setAuthor(`${messageDeleted.author} (${messageDeleted.author.id})`, `${messageDeleted.author.avatarURL({size: 4096})}`)
+		.setDescription(respone)
+		.setTimestamp()
+		.setColor('#6aa75e');
+	
+	bot.channels.cache.find(c => c.name == "「📃」berichten-log").send(deletedContentEmbed);
+
+
+});
+
+
+//Scheldwoorden
 bot.on('message', async message => {
 	
   if (message.author.bot) return;
@@ -85,6 +110,7 @@ bot.on('message', async message => {
 });
 
 
+//Level Systeem.
 function RandomXp(message) {
 
   var randomNumber = Math.floor(Math.random() * 15) + 1;

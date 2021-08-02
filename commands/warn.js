@@ -50,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
         **Redenen: ** ${reason}`)
         .addField("Aantal warns", warns[warnUser.id].warns);
 
-    var warninglog = message.member.guild.channels.cache.get("870335985676865576");
+    var warninglog = message.member.guild.channels.cache.get("688467758853521446");
 
     warninglog.send(warningEmbed);
 

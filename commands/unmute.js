@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     var muteRole = message.guild.roles.cache.get('794678890429677620');
     if (!muteRole) return message.channel.send("De rol muted bestaat niet.");
 
-    const muteChannel = message.guild.channels.cache.find(c => c.name == "「📋」bot-warns");
+    const muteChannel = message.guild.channels.cache.find(c => c.name == "「📃」user-logs");
 
      var muteEmbed = new discord.MessageEmbed()
       .setColor("#6aa75e")

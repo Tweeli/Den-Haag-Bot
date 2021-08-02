@@ -11,7 +11,7 @@ module.exports.run = async(bot, message, args) => {
     
     var banUser = message.guild.member( message.mentions.users.first() || message.guild.members.get(args[1]));
     
-    const banChannel = message.guild.channels.cache.find(c => c.name == "「📋」bot-warns")
+    const banChannel = message.guild.channels.cache.find(c => c.name == "「📃」user-logs")
     
     
     if(!args[1]) return message.reply("Geen redenen opgegeven")
