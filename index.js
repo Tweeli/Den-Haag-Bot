@@ -58,7 +58,7 @@ bot.on("guildMemberAdd", member => {
 	bot.channels.cache.get('669284473711362088').send(welkomEmbed);
 
 
-})
+});
 
 
 //Bot Status.
