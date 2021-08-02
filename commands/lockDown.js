@@ -13,14 +13,12 @@ module.exports.run = async (bot, message, args) => {
 
     ])
 
-    message.lineReply("Het kanaal is in lockdown.")
+    message.lineReply("Het kanaal is gelockt.")
     
 
 }
 
 module.exports.help = {
-    name: "leden",
-    description: "Geeft weer hoeveel leden er in de server zitten.",
-    category: "Informatie",
-    aliases: []
+    name: "lock",
+    aliases: ["lockdown"]
 }
