@@ -56,7 +56,7 @@ bot.on("messageDelete", messageDeleted => {
 	var respone = `Bericht ${messageDeleted.id} is verwijderd uit ${messageDeleted.channel} \n **Bericht:** ${content}`;
 
 	var deletedContentEmbed = new discord.MessageEmbed()
-		.setAuthor(`${messageDeleted.author} (${messageDeleted.author.id})`, `${messageDeleted.author.avatarURL({size: 4096})}`)
+		.setAuthor(`${messageDeleted.author.tag} (${messageDeleted.author.id})`, `${messageDeleted.author.avatarURL({size: 4096})}`)
 		.setDescription(respone)
 		.setTimestamp()
 		.setColor('#6aa75e');
