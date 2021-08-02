@@ -57,7 +57,7 @@ bot.on("guildMemberAdd", member => {
 		Bij vragen kunt u altijd naar 「🤖」bot-commands gaan en !new typen om een ticket aan te maken!`)
 		.setColor('#6aa75e')
 		.setFooter("Veel plezier toegewenst in de server! | Created by Tweeli.#0001");
-		message.lineReply(welkomEmbed);
+		channel.send(welkomEmbed);
 
 })
 
