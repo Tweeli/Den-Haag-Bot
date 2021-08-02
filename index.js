@@ -49,8 +49,8 @@ bot.on("guildMemberAdd", member => {
 
 	var welkomEmbed = new discord.MessageEmbed()
 		.setTitle("Welkom!")
-		.setDescription(`Welkom in TeamDJD | Den Haag Stad V2 ${member} \nlees zeker even de #「🟢」discord-regels door!
-		Bij vragen kunt u altijd naar 「🤖」bot-commands gaan en !new typen om een ticket aan te maken!`)
+		.setDescription(`Welkom in TeamDJD | Den Haag Stad V2 ${member} \n\nlees zeker even de #「🟢」discord-regels door!
+		Bij vragen kunt u altijd naar #「🤖」bot-commands gaan en !new typen om een ticket aan te maken!`)
 		.setColor('#6aa75e')
 		.setFooter("Veel plezier toegewenst in de server! | Created by Tweeli.#0001");
 	bot.channels.cache.get('669284473711362088').send(welkomEmbed);
