@@ -47,8 +47,6 @@ bot.on("guildMemberAdd", member => {
 
 	member.roles.add(role);
 
-	var channel = member.guild.channels.cache.get('669284473711362088');
-
 	if (!channel) return;
 
 	var welkomEmbed = new discord.MessageEmbed()
@@ -57,7 +55,8 @@ bot.on("guildMemberAdd", member => {
 		Bij vragen kunt u altijd naar 「🤖」bot-commands gaan en !new typen om een ticket aan te maken!`)
 		.setColor('#6aa75e')
 		.setFooter("Veel plezier toegewenst in de server! | Created by Tweeli.#0001");
-		channel.send(welkomEmbed);
+	bot.channels.cache.get('669284473711362088').send(welkomEmbed);
+
 
 })
 
