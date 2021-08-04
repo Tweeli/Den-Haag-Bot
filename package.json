@@ -15,7 +15,6 @@
     "discord.js": "^12.5.3",
     "distube": "^2.8.15",
     "ffmpeg-static": "^4.4.0",
-    "mongoose": "^5.13.5",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "ytdl-core": "^4.9.0"
