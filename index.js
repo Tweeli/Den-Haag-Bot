@@ -139,8 +139,6 @@ bot.on('message', async message => {
 
 	var command = messageArray[0];
 
-	RandomXp(message)
-
 	if (!message.content.startsWith(prefix)) return;
 
 	var arguments = messageArray.slice(1);
@@ -149,54 +147,6 @@ bot.on('message', async message => {
 
 	if (commands) commands.run(bot, message, arguments);
 });
-
-
-//Level Systeem.
-function RandomXp(message) {
-
-	var randomNumber = Math.floor(Math.random() * 15) + 1;
-
-	var idUser = message.author.id
-
-	if (!levelFile[idUser]) {
-		levelFile[idUser] = {
-			xp: 0,
-			level: 0
-		}
-	}
-
-
-
-	levelFile[idUser].xp += randomNumber
-
-	var levelUser = levelFile[idUser].level;
-	var xpUser = levelFile[idUser].xp;
-
-	var nextLevelXp = levelUser * 300;
-
-	if (nextLevelXp === 0) nextLevelXp = 100;
-
-	if (xpUser >= nextLevelXp) {
-
-		levelFile[idUser].level += 1;
-
-		fs.writeFile("./data/levels.json", JSON.stringify(levelFile), err => {
-			if (err) console.log(err)
-		});
-
-		var levelEmbedSend = message.member.guild.channels.cache.get("661970226551717959");
-
-		var levelEmbed = new discord.MessageEmbed()
-			.setDescription(`** <@${idUser}> is een level hoger!**`)
-			.setColor("#6aa75e")
-			.addField("Nieuw level:", levelFile[idUser].level)
-		levelEmbedSend.send(levelEmbed)
-
-	}
-
-}
-
-
 
 
 bot.login(process.env.token);
