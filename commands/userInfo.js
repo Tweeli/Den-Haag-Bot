@@ -22,7 +22,7 @@ module.exports.run = async(bot, message, args) => {
         .addField("ID:", `${member.id}`, true)
         .addField("Bijnaam:", nickName, true)
         .addField("Status:", `${status}`, true)
-        .addField("Game:", `${member.user.presence.game || 'Speelt geen game.'}`)
+        .addField("Game:", `${member.presence.activities[0] ? member.presence.activities[0].name : 'Geen.'}`, true)
         .addField("Account gemaakt:", `${moment(member.user.createdAt).format("LL")}`)
         .addField("Server gejoined:", `${moment(member.joinedAt).format('LL')}`)
         .addField(`Rollen: [${roles}]`, `${roleNames}`)
