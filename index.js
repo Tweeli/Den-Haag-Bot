@@ -13,7 +13,7 @@ const bot = new discord.Client({
 //Mongoose/Database.
 const mongoose = require('mongoose');
 
-mongoose.connect(process.botConfig.MONGODB_SRV, {
+mongoose.connect(botConfig.MONGODB_SRV, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
