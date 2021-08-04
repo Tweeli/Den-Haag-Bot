@@ -5,9 +5,22 @@ const botConfig = require('./botconfig.json');
 const levelFile = require('./data/levels.json')
 const fs = require('fs');
 
-//client//
+//client.
 const bot = new discord.Client({
 	partails: ['MESSAGE', 'CHANNEL', 'REACTION']
+});
+
+//Mongoose/Database.
+const mongoose = require('mongoose');
+
+mongoose.connect(process.botConfig.MONGODB_SRV, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useFindAndModify: false
+}).then(()=>{
+	console.log('Connected to the database.')
+}).catch((err) =>{
+	console.log(err);
 });
 
 //Command handler
