@@ -10,19 +10,6 @@ const bot = new discord.Client({
 	partails: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
-//Mongoose/Database.
-const mongoose = require('mongoose');
-
-mongoose.connect(botConfig.MONGODB_SRV, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-	useFindAndModify: false
-}).then(()=>{
-	console.log('Connected to the database.')
-}).catch((err) =>{
-	console.log(err);
-});
-
 //Command handler
 bot.commands = new discord.Collection();
 bot.aliases = new discord.Collection();
