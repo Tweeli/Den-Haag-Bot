@@ -15,10 +15,6 @@ module.exports.run = async(bot, message, args) => {
     var nickName = member.nickname;
     if(nickName == null || undefined) nickName = "Geen.";
 
-    const flags = {
-        DISCORD_EMPLOYEE: ''
-    }
-
     var userinfoEmbed = new discord.MessageEmbed()
         .setColor("#6aa75e")
         .setThumbnail(member.user.displayAvatarURL({size: 4096}))
