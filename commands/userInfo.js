@@ -19,7 +19,6 @@ module.exports.run = async(bot, message, args) => {
         .setAuthor(`${message.author.tag}`, `${message.author.avatarURL({ size: 4096 })}`)
         .setColor("#6aa75e")
         .setThumbnail(member.user.displayAvatarURL({size: 4096}))
-        .setTitle(`${member.user.tag}`)
         .addField("ID:", `${member.id}`, true)
         .addField("Bijnaam:", nickName, true)
         .addField("Status:", `${status}`, true)
