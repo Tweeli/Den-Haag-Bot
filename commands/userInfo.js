@@ -18,6 +18,7 @@ module.exports.run = async(bot, message, args) => {
     var userinfoEmbed = new discord.MessageEmbed()
         .setAuthor(`${message.author.tag}`, `${message.author.avatarURL({ size: 4096 })}`)
         .setColor("#6aa75e")
+        .setDescription(`${message.author}`)
         .setThumbnail(member.user.displayAvatarURL({size: 4096}))
         .addField("ID:", `${member.id}`, true)
         .addField("Bijnaam:", nickName, true)
