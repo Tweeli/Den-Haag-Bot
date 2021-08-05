@@ -50,6 +50,7 @@ module.exports.run = async (bot, message, args) => {
                             .setFooter('Created by Tweeli.#0001');
                         message.lineReply(ticketEmbed); 
 
+                    createdChannel.send(`${message.author}, <@&868432117305049109>`);
                     var embedParent = new discord.MessageEmbed()
                         .setTitle(`Hoi ${message.author.username}`)
                         .setDescription("Het support team komt er zo snel mogelijk aan! \n Zeg hier alvast je vraag.")
@@ -57,8 +58,8 @@ module.exports.run = async (bot, message, args) => {
                         .setFooter('Created by Tweeli.#0001');
           
        
-                    settedParent.send(embedParent);    
-                    createdChannel.send(`${message.author}, <@&868432117305049109>`)
+                    settedParent.send(embedParent);
+                       
                     var ticketLog = new discord.MessageEmbed()
                     .setTitle("Ticket, " + createdChannel.name)
                     .setDescription("Het ticket van " + createdChannel.name + " is geopend.")
