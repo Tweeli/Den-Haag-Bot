@@ -14,7 +14,8 @@ module.exports.run = async (bot, message, args) => {
             .setTitle(`${catTitle}`)
             .setURL(`${catUrl}`)
             .setImage(`${catFoto}`)
-            .setColor('#6aa75e');
+            .setColor('#6aa75e')
+            .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
         message.lineReply(memeEmbed);
 
     }).catch("error", (err) => {

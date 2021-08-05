@@ -14,7 +14,7 @@ module.exports.run = async(bot, message, args) => {
     const kickChannel = message.guild.channels.cache.find(c => c.name == "「📃」user-logs")
     
     
-    if(!args[1]) return message.reply("Geen redenen opgegeven")
+    if(!args[1]) return message.reply(`Geen redenen opgegeven om ${kickUser} te **kicken**.`)
     
   
     
@@ -24,12 +24,12 @@ module.exports.run = async(bot, message, args) => {
 
     var embedPrompt = new discord.MessageEmbed()
         .setColor("#6aa75e")
-        .setDescription(`Wil je ${kickUser} kicken?`)
-        .setFooter("Created by Tweeli.#0001");
+        .setDescription(`Wil je ${kickUser} **kicken**?`)
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
     var embed = new discord.MessageEmbed()
         .setColor("#6aa75e")
-        .setFooter(message.member.displayName)
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
         .setTimestamp()
         .setDescription(`**Gekickt: ** ${kickUser} \n**Gekickt door:** ${message.author} \n**Reden: ** ${reason}`);
 

@@ -15,14 +15,16 @@ module.exports.run = async (bot, message, args) => {
     var embedPromt = new discord.MessageEmbed()
         .setColor("#6aa75e")
         .setTitle("Gelieve te antwoorden binnen 30 seconden.")
-        .setDescription(`Wil je ${addUser} verwijderen? | Created by Tweeli.#0001`);
+        .setDescription(`Wil je ${addUser} verwijderen? | Created by Tweeli.#0001`)
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
     
     var toevoegEmbed = new discord.MessageEmbed()
         .setTitle("Gebruiker verwijderd.")
         .setColor("#6aa75e")
         .setTimestamp()
         .addField("Verwijderde gebruiker", `${addUser}`)
-        .addField("Persoon verwijderd door", message.author);
+        .addField("Persoon verwijderd door", message.author)
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
     message.lineReply(embedPromt).then(async msg => {
 

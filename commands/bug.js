@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle(`Bug ingezonden door ${message.author.tag} !`)
         .setColor("#6aa75e")
         .setDescription("> Bug: " + args.join(" "))
-        .setFooter('Created by Tweeli.#0001');
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
     var msg = await suggestions.send(suggestieEmbed);
 

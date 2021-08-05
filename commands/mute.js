@@ -38,9 +38,9 @@ module.exports.run = async (bot, message, args) => {
 
     var muteEmbed = new discord.MessageEmbed()
       .setColor("#6aa75e")
-      .setFooter(message.member.displayName)
       .setTimestamp()
-      .setDescription(`**Gemute: ** ${mutePerson} \n**Gemute door:** ${message.author} \n**Reden: ** ${reden} \n**Tijd: ** ${tijd}`);
+      .setDescription(`**Gemute: ** ${mutePerson} \n**Gemute door:** ${message.author} \n**Reden: ** ${reden} \n**Tijd: ** ${tijd}`)
+      .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
     muteChannel.send(muteEmbed);
 
 

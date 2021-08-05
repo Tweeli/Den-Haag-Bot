@@ -22,7 +22,7 @@ const afmeldEmbed = new discord.MessageEmbed()
         .addField("Eind datum:", "> " + einde)
         .addField("Reden:", "> " + reden)
         .setColor("#6aa75e")
-        .setFooter('Created by Tweeli.#0001')
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 var msg = await afmelden.send(afmeldEmbed);
 return message.lineReply("U bent succesvol afgemeld.")
 

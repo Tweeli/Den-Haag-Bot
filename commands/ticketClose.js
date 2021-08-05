@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Ticket, " + message.channel.name)
             .setDescription("Het ticket van " + message.channel.name + ` is gesloten door ${message.author} . \n \n **Reden: ** ${reden}`)
             .setColor("#6aa75e")
-            .setFooter('Created by Tweeli.#0001');
+            .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
         // Channel voor logging
         var logChannel = message.guild.channels.cache.find(channel => channel.id === "868377923638411304");

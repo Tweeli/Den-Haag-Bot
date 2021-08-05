@@ -21,7 +21,7 @@ module.exports.run = async(bot, message, args) => {
      .addField("Gemaakt op:", `${moment(message.guild.createdAt).format('LL')}`)
      .addField("Je bent gejoined op:", `${moment(message.member.joinedAt).format('LL')}`)
      .addField(`Rollen:`, `Deze server telt **${roles} rollen**. Voor meer info over de rollen kunt u !rollen doen.`)
-     .setFooter('Created by Tweeli.#0001');
+     .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
      message.lineReply(serverinfoEmbed);
 

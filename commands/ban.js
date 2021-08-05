@@ -24,11 +24,11 @@ module.exports.run = async(bot, message, args) => {
     var embedPrompt = new discord.MessageEmbed()
         .setColor("#6aa75e")
         .setDescription(`Wil je ${banUser} bannen?`)
-        .setFooter("Created by Tweeli.#0001");
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
     var embed = new discord.MessageEmbed()
         .setColor("#6aa75e")
-        .setFooter(message.member.displayName)
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
         .setTimestamp()
         .setDescription(`**Gebannen: ** ${banUser} \n**Gebannen door:** ${message.author} \n**Reden: ** ${reason}`);
 

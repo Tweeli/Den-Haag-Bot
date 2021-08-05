@@ -7,6 +7,7 @@ const discord = require("discord.js");
     var rolesEmbed = new discord.MessageEmbed()
     .setTitle('Rollen Den Haag Stad.')
     .setDescription(`Rollen: [${roles}] ${message.guild.roles.cache.map(r => r).join(" ").replace("@everyone", "")}`)
+    .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
          
   message.lineReply(rolesEmbed)
 

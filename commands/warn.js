@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
     });
       var warnEmbed = new discord.MessageEmbed()
         .setColor("#ff0000")
-        .setFooter(message.member.displayName, message.author.displayAvatarURL)
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
         .setTimestamp()
         .setDescription(`**Gewarnd:** ${warnUser} (${warnUser.id})
         **Gegeven door:** ${message.author}
@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
 
     var warningEmbed = new discord.MessageEmbed()
         .setColor("#ff0000")
-        .setFooter(message.member.displayName, message.author.displayAvatarURL)
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
         .setTimestamp()
         .setDescription(`**Gewarnd:** ${warnUser} (${warnUser.id})
         **Gegeven door:** ${message.author}
