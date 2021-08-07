@@ -40,24 +40,24 @@ fs.readdir('./commands/', (err, files) => {
 
 
 //Welkom's bericht.
-bot.on("guildMemberAdd", member => {
+//bot.on("guildMemberAdd", member => {
 
-	var role = member.guild.roles.cache.get('566189282793095170');
+//	var role = member.guild.roles.cache.get('566189282793095170');
 
-	if (!role) return;
+//	if (!role) return;
 
-	member.roles.add(role);
+//	member.roles.add(role);
 
-	var welkomEmbed = new discord.MessageEmbed()
-		.setTitle("Welkom!")
-		.setDescription(`Welkom in TeamDJD | Den Haag Stad V2 ${member} \n\nlees zeker even de <#790891625320546324> door!
-		Bij vragen kunt u altijd naar <#560844017336582144> gaan en !new typen om een ticket aan te maken!`)
-		.setColor('#6aa75e')
-        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
-	bot.channels.cache.get('669284473711362088').send(welkomEmbed);
+//	var welkomEmbed = new discord.MessageEmbed()
+//		.setTitle("Welkom!")
+//		.setDescription(`Welkom in TeamDJD | Den Haag Stad V2 ${member} \n\nlees zeker even de <#790891625320546324> door!
+//		Bij vragen kunt u altijd naar <#560844017336582144> gaan en !new typen om een ticket aan te maken!`)
+//		.setColor('#6aa75e')
+//      .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
+//	bot.channels.cache.get('669284473711362088').send(welkomEmbed);
 
 
-});
+//});
 
 
 //Bot Status.
