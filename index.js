@@ -69,7 +69,7 @@ bot.on('ready', async () => {
 	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
 		data:{
 			name: "test",
-			discription: "Geeft een antwoord"
+			description: "Geeft een antwoord"
 		}
 	})
 
