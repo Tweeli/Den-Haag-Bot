@@ -9,9 +9,9 @@ module.exports.run = async (bot, message, args) => {
     var num = Math.floor(Math.random()*quotes.Quotes.length)
 
     var quoteEmbed = new discord.MessageEmbed()
-     .setDescription(quotes.Quotes[num].q)
+     .setDescription(`${quotes.Quotes[num].q}`)
      .setColor("#6aa75e")
-     .setFooter(quotes.Quotes[num].a);
+     .setFooter(`${quotes.Quotes[num].a}`);
     message.lineReply(quoteEmbed);
 
 }
