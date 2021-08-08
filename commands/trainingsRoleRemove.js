@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     
     message.member.roles.remove(trainingsRole.id);
 
-    return message.lineReply("Je hebt de trainingsrole gekregen! | 📚")
+    return message.lineReply("Je trainingsrole is weggehaalt! | 📚")
 
 }
 
