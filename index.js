@@ -60,11 +60,19 @@ fs.readdir('./commands/', (err, files) => {
 //});
 
 
-//Bot Status.
+//Bot Status/Slash Commands.
 bot.on('ready', async () => {
 	console.log(`${bot.user.username} Is online!`);
 
 	bot.user.setActivity('Tweeli.#0001.', { type: 'LISTENING' });
+
+	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
+		data:{
+			name: "test",
+			discription: "Geeft een antwoord"
+		}
+	})
+
 });
 
 
