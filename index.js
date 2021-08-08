@@ -73,6 +73,22 @@ bot.on('ready', async () => {
 		}
 	})
 
+	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
+		data:{
+			name: "tekst",
+			description: "Geeft jou eigen antwoord terug",
+
+			options: [
+				{
+					name: 'Inhoud',
+					description: 'Inhoud van je bericht',
+					type: 3,
+					require: true
+				}
+			]
+		}
+	})
+
 });
 
 
