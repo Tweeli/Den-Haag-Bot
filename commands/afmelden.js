@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
     message.member.roles.add(afmeldRole.id);
 
 const afmeldEmbed = new discord.MessageEmbed()
-        .setAuthor(`${message.author.username.tag}`, `${message.author.avatarURL({ size: 4096 })}`)
+        .setAuthor(`${message.author.username}`, `${message.author.avatarURL({ size: 4096 })}`)
         .addField("Begin datum:", "> " + begin)
         .addField("Eind datum:", "> " + einde)
         .addField("Reden:", "> " + reden)
