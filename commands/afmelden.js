@@ -10,11 +10,15 @@ module.exports.run = async (bot, message, args) => {
     
      if (!args[2]) return message.reply("Geen reden meegegeven.")
 
+     var afmeldRole = message.guild.roles.cache.get('873857897136783360');
+
      var begin = args[0]
      var einde = args[1]
      var reden = args.slice(2).join(" ")
 
     var afmelden = message.member.guild.channels.cache.get("666690472692940830");
+
+    message.member.roles.add(afmeldRole.id);
 
 const afmeldEmbed = new discord.MessageEmbed()
         .setTitle(`${message.author.tag} heeft zich afgemeld.`)
@@ -24,6 +28,7 @@ const afmeldEmbed = new discord.MessageEmbed()
         .setColor("#6aa75e")
         .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 var msg = await afmelden.send(afmeldEmbed);
+await message.member.roles.add(afmeldRole.id);
 return message.lineReply("U bent succesvol afgemeld.")
 
 }

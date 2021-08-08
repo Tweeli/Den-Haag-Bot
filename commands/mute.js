@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
 
     if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Geen perms");
 
-    var mutePerson = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    var mutePerson = message.guild.member(message.mentions.users.first() || bot.users.cache.get(args[0]));
 
     if (!mutePerson) return message.reply("Kan de gebruiker niet vinden.");
 
