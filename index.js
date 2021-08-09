@@ -110,7 +110,7 @@ bot.on('ready', async () => {
 
 			const beschrijving = args.find(args => args.name.toLocaleLowerCase() == 'inhoud').value;
 
-			const embed = new discord.MessageEmbed()
+			const tekstEmbed = new discord.MessageEmbed()
 				.setDescription(beschrijving)
 				.setAuthor(`${interactie.member.user.username}`, `${interactie.author.avatarURL({ size: 4096 })}`)
 				.setColor('#6aa75e')
@@ -118,7 +118,7 @@ bot.on('ready', async () => {
 				bot.api.interactions(interactie.id, interactie.token).callback.post({
 					data: {
 						type: 4,
-						data: await createAPIMesage(interactie, embed)
+						data: await createAPIMesage(interactie, tekstEmbed)
 					}
 				})
 
