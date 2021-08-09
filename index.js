@@ -191,8 +191,8 @@ bot.on('ready', async () => {
 			})
 		}
 
-		if (command == "commands") {
-			// [{name: 'inhoud', value: "tekst meegeeft"}]
+		if (command == "staffcommands") {
+			// [{name: 'inhoud', value: "tekst meegeeft"}]^mù
 
 			var staffCommandsEmbed = new discord.MessageEmbed()
 				.setTitle("Den Haag Bot Staff Commands:")
