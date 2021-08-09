@@ -105,6 +105,13 @@ bot.on('ready', async () => {
 		}
 	});
 
+	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
+		data: {
+			name: "8ball",
+			description: "Geeft een wilkeurig antwoord"
+		}
+	})
+
 	bot.ws.on('INTERACTION_CREATE', async interactie => {
 
 		const args = interactie.data.options;
@@ -157,6 +164,30 @@ bot.on('ready', async () => {
 				})
 	
 	
+		}
+
+		if (command == "8ball") {
+			// [{name: 'inhoud', value: "tekst meegeeft"}]
+
+			var antwoorden = ["Ja", "Nee", "Misschien", "Misschien niet", "Waarschijnlijk wel"];
+			var resultaat = Math.floor((Math.random() * antwoorden.length));
+
+			const eightBallEmbed = new Discord.MessageEmbed()
+			.setTitle(`8ball vraag van ${message.author.username}`)
+			.setDescription("Lees hier de vraag van de 8ball")
+			.setThumbnail("https://magic-8ball.com/assets/images/Our_magic_8_ball.png")
+		   .addField(`"Antwoord", ${antwoorden[resultaat]}`)
+		   .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
+		   .setTimestamp()
+
+				bot.api.interactions(interactie.id, interactie.token).callback.post({
+					data: {
+						type: 4,
+						data: await createAPIMesage(interactie, tekstEmbed)
+					}
+				})
+
+
 		}
 	});
 });
