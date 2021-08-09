@@ -142,6 +142,9 @@ bot.on('ready', async () => {
 
 		if (command == "avatar") {
 			// [{name: 'inhoud', value: "tekst meegeeft"}]
+
+			var member = message.guild.member(message.mentions.users.first() || bot.users.cache.get(args[0]));
+			if(!member) member = message.member;
 	
 			var avatarEmbed = new discord.MessageEmbed()
 			.setTitle(`Profielfoto van ${interactie.user.tag}`)
