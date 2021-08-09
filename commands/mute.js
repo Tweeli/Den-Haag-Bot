@@ -3,11 +3,6 @@ const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
 
-    var kanaal = "560844017336582144"
-	var kanaal2 = "692811822809743380"
-	
-	if(message.channel.id !== kanaal || message.channel.id !== kanaal2) return message.lineReply('> Bot commands kunnen alleen uitgevoerd worden in <#560844017336582144>.');
-
     // !tempmute persoon tijd (h,m,s).
 
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("sorry jij kan dit niet");
