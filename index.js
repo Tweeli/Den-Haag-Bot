@@ -87,6 +87,22 @@ bot.on('ready', async () => {
 				}
 			]
 		}
+	})
+
+	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
+		data: {
+			name: "avatar",
+			description: "Geeft de avatar weer van de persoon die je hebt meegegeven",
+
+			options: [
+				{
+					name: 'persoon',
+					description: 'de persoon waarvan je de avatar van wilt',
+					type: 3,
+					require: true
+				}
+			]
+		}
 	});
 
 	bot.ws.on('INTERACTION_CREATE', async interactie => {
@@ -124,8 +140,28 @@ bot.on('ready', async () => {
 
 		}
 	});
+
+	if (command == "avatar") {
+		// [{name: 'inhoud', value: "tekst meegeeft"}]
+
+		var avatarEmbed = new discord.MessageEmbed()
+        .setTitle(`Profielfoto van ${interactie.user.tag}`)
+        .setImage(member.user.displayAvatarURL({dynamic : true, size: 4096}))
+        .setColor("#6aa75e")
+        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
+
+			bot.api.interactions(interactie.id, interactie.token).callback.post({
+				data: {
+					type: 4,
+					data: await createAPIMesage(interactie, avatarEmbed)
+				}
+			})
+
+
+	}
 });
 
+// Slash commands.
 async function createAPIMesage(interactie, content) {
 
 	var apiMessage = await discord.APIMessage.create(bot.channels.resolve(interactie.channel_id), content)
