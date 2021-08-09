@@ -67,14 +67,14 @@ bot.on('ready', async () => {
 	bot.user.setActivity('Tweeli.#0001.', { type: 'LISTENING' });
 
 	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
-		data:{
+		data: {
 			name: "test",
 			description: "Geeft een antwoord"
 		}
 	})
 
 	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
-		data:{
+		data: {
 			name: "tekst",
 			description: "Geeft jou eigen antwoord terug",
 
@@ -87,7 +87,25 @@ bot.on('ready', async () => {
 				}
 			]
 		}
-	})
+	});
+
+	bot.ws.on('INTERACTION_CREATE', async interactie => {
+
+		const args = interactie.data.options;
+		const command = interactie.data.name.toLocaleLowerCase();
+
+		if (command == 'test') {
+			bot.api.interactions(interactie.id, interactie.token).callback.post({
+				data:{
+					type: 4,
+					data:{
+						content: "Hoi, dit is een bericht."
+					}
+				}
+			})
+		}
+
+	});
 
 });
 
@@ -107,7 +125,7 @@ bot.on("messageDelete", messageDeleted => {
 		.setDescription(respone)
 		.setTimestamp()
 		.setColor('#6aa75e')
-        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
+		.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
 	bot.channels.cache.get('871799202055868477').send(deletedContentEmbed);
 
@@ -127,7 +145,7 @@ bot.on("messageUpdate", async (oldMessage, newMessage) => {
 		.setDescription(`Bericht ${newMessage.id} is bewerkt in ${newMessage.channel}\n **Voor:** ${oldMessage.content}\n **Na:** ${newMessage.content}`)
 		.setColor('#6aa75e')
 		.setTimestamp()
-        .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
+		.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 	bot.channels.cache.get('871799202055868477').send(newMessageEmbed);
 
 })
