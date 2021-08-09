@@ -112,7 +112,7 @@ bot.on('ready', async () => {
 
 			const tekstEmbed = new discord.MessageEmbed()
 				.setDescription(beschrijving)
-				.setAuthor(`${interactie.member.user.username}`, `${interactie.author.avatarURL({ size: 4096 })}`)
+				.setAuthor(`${interactie.member.user.username}`)
 				.setColor('#6aa75e')
 
 				bot.api.interactions(interactie.id, interactie.token).callback.post({
