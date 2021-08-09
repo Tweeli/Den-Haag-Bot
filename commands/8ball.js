@@ -2,10 +2,6 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
 
-    if (message.channel.id !== '560844017336582144' || `692811822809743380`) return message.lineReply('Bot commands kunnen alleen in <#560844017336582144> uitgevoerd worden.');
-
-
-
     if (!args[2]) return message.reply("Stel hier je volledige vraag");
     let antwoorden = ["Ja", "Nee", "Misschien", "Misschien niet", "Waarschijnlijk wel"];
 
