@@ -87,6 +87,13 @@ bot.on('ready', async () => {
 		}
 	})
 
+	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
+		data: {
+			name: "meme",
+			description: "Geeft een random meme weer"
+		}
+	})
+
 
 	bot.api.applications(bot.user.id).guilds('493866072072650762').commands.post({
 		data: {
@@ -204,6 +211,35 @@ bot.on('ready', async () => {
 				data: {
 					type: 4,
 					data: await createAPIMesage(interactie, staffCommandsEmbed)
+				}
+			})
+		}
+
+		if (command == "meme") {
+			// [{name: 'inhoud', value: "tekst meegeeft"}]^mù
+
+			fetch('https://www.reddit.com/r/memes/random/.json').then(resp => resp.json()).then(respOmgevormd => {
+
+				var permaLink = respOmgevormd[0].data.children[0].data.permaLink;
+				var memeUrl = `https://www.reddit.com${permaLink}`;
+				var memeFoto = respOmgevormd[0].data.children[0].data.url;
+				var memeTitle = respOmgevormd[0].data.children[0].data.title;
+		
+				var memeEmbed = new discord.MessageEmbed()
+					.setTitle(`${memeTitle}`)
+					.setURL(`${memeUrl}`)
+					.setImage(`${memeFoto}`)
+					.setColor('#6aa75e')
+					.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
+		
+			}).catch("error", (err) => {
+				console.log(err.message);
+			})
+
+			bot.api.interactions(interactie.id, interactie.token).callback.post({
+				data: {
+					type: 4,
+					data: await createAPIMesage(interactie, memeEmbed)
 				}
 			})
 		}
