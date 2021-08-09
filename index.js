@@ -183,7 +183,7 @@ bot.on('ready', async () => {
 				bot.api.interactions(interactie.id, interactie.token).callback.post({
 					data: {
 						type: 4,
-						data: await createAPIMesage(interactie, tekstEmbed)
+						data: await createAPIMesage(interactie, eightBallEmbed)
 					}
 				})
 
