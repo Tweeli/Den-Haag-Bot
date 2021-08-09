@@ -199,8 +199,8 @@ bot.on('ready', async () => {
 			// [{name: 'inhoud', value: "tekst meegeeft"}]
 
 			var avatarEmbed = new discord.MessageEmbed()
-				.setTitle(`Profielfoto van ${interactie.user.tag}`)
-				.setImage(member.user.displayAvatarURL({ dynamic: true, size: 4096 }))
+				.setTitle(`Profielfoto van`)
+				.setImage(interactie.user.displayAvatarURL({ dynamic: true, size: 4096 }))
 				.setColor("#6aa75e")
 				.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
