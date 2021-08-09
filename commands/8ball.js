@@ -2,6 +2,11 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
 
+    var kanaal = "560844017336582144"
+	var kanaal2 = "692811822809743380"
+	
+	if(message.channel.id !== kanaal || message.channel.id !== kanaal2) return message.lineReply('> Bot commands kunnen alleen uitgevoerd worden in <#560844017336582144>.');
+
 
 
     if (!args[2]) return message.reply("Stel hier je volledige vraag");

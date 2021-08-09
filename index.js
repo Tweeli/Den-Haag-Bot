@@ -307,11 +307,6 @@ bot.on('message', async message => {
 
 	if (message.author.bot) return;
 
-	var kanaal = "560844017336582144"
-	var kanaal2 = "692811822809743380"
-	
-
-
 
 	if (message.channel.type === "dm") return message.lineReply("Bot commands kunnen niet in dm uitgevoerd worden.")
 
