@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
     // !warn spelerNaam redenen hier.
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
+    if (!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("sorry jij kan dit niet");
 
     if (!args[0]) return message.reply("Geen gebruiker opgegeven.");
 
