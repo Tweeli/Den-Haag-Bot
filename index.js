@@ -134,7 +134,7 @@ bot.on('ready', async () => {
 				{
 					name: 'persoon',
 					description: 'de persoon waarvan je de avatar van wilt',
-					type: 3,
+					type: 6,
 					require: true
 				}
 			]
