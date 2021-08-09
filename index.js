@@ -179,6 +179,8 @@ bot.on('ready', async () => {
 		if (command == "dog") {
 			// [{name: 'inhoud', value: "tekst meegeeft"}]
 
+			const fetch = require('node-fetch');
+
 			fetch('https://www.reddit.com/r/lookatmydog/random/.json').then(resp => resp.json()).then(respOmgevormd => {
 
 				var permaLink = respOmgevormd[0].data.children[0].data.permaLink;
@@ -193,7 +195,7 @@ bot.on('ready', async () => {
 					.setColor('#6aa75e')
 					.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 		
-			});
+			})
 
 			bot.api.interactions(interactie.id, interactie.token).callback.post({
 				data: {
