@@ -96,19 +96,46 @@ bot.on('ready', async () => {
 
 		if (command == 'test') {
 			bot.api.interactions(interactie.id, interactie.token).callback.post({
-				data:{
+				data: {
 					type: 4,
-					data:{
+					data: {
 						content: "Hoi, dit is een bericht."
 					}
 				}
 			})
 		}
 
-	});
+		if (command == "tekst") {
+			// [{name: 'inhoud', value: "tekst meegeeft"}]
 
+			const beschrijving = args.find(args => args.name.toLocaleLowerCase() == 'inhoud').value;
+
+			const embed = new discord.MessageEmbed()
+				.setDescription(beschrijving)
+				.setAuthor(`${interactie.member.user.username}`, `${interactie.author.avatarURL({ size: 4096 })}`)
+				.setColor('#6aa75e')
+
+				bot.api.interactions(interactie.id, interactie.token).callback.post({
+					data: {
+						type: 4,
+						data: await createAPIMesage(interactie, embed)
+					}
+				})
+
+
+		}
+	});
 });
 
+async function createAPIMesage(interactie, content) {
+
+	var apiMessage = await discord.APIMessage.create(bot.channels.resolve(interactie.channel_id), content)
+		.resolveData()
+		.resolveFiles();
+
+	return { ...apiMessage.data };
+
+}
 
 //Verwijderd bericht log.
 bot.on("messageDelete", messageDeleted => {
