@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async(bot, message, args) => {
 	
-    if(message.channel.id !== "560844017336582144") return message.lineReply('Bot commands kunnen alleen in <#560844017336582144> uitgevoerdz');
+    if(message.channel.id !== "560844017336582144") return message.lineReply('Bot commands kunnen alleen in <#560844017336582144> uitgevoerd.');
 
 
 
