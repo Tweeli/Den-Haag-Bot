@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
     // !tempmute persoon tijd (h,m,s).
 
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("sorry jij kan dit niet");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("sorry jij kan dit niet");
 
     if (!args[0]) return message.reply("Geen gebruiker opgegeven.");
 
