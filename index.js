@@ -232,8 +232,6 @@ bot.on('ready', async () => {
 					.setColor('#6aa75e')
 					.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
 		
-			}).catch("error", (err) => {
-				console.log(err.message);
 			})
 
 			bot.api.interactions(interactie.id, interactie.token).callback.post({
