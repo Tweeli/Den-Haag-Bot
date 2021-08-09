@@ -169,7 +169,7 @@ bot.on('ready', async () => {
 
 		}
 
-		if (command == "say") {
+		if (command == "solli-vragen") {
 			// [{name: 'inhoud', value: "tekst meegeeft"}]
 
 			var solliVragenEmbed = new discord.MessageEmbed()
