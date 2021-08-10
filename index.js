@@ -3,13 +3,11 @@ const fetch = require("node-fetch")
 const botConfig = require('./botconfig.json');
 const levelFile = require('./data/levels.json')
 const fs = require('fs');
+const { Client, Intents } = require('discord.js')
 
 //client.
-const bot = new Client({
-	makeCache: manager => {
-		if (manager.name === 'MessageManager') return new LimitedCollection({ maxSize: 0 });
-		return new Collection();
-	},
+const bot = new discord.Client({
+	partails: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
 //Command handler
