@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
      .setDescription(`${quotes.Quotes[num].q}`)
      .setColor("#6aa75e")
      .setFooter(`${quotes.Quotes[num].a}`);
-    message.lineReply(quoteEmbed);
+    message.reply(quoteEmbed);
 
 }
 

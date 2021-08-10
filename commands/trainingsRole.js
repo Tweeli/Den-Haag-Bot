@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     
     message.member.roles.add(trainingsRole.id);
 
-    return message.lineReply("Je hebt de trainingsrole gekregen! | 📚")
+    return message.reply("Je hebt de trainingsrole gekregen! | 📚")
 
 }
 

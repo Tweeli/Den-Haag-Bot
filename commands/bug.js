@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
 
     var msg = await suggestions.send(suggestieEmbed);
 
-    return message.lineReply("Bug seccesvol ingezonden!");
+    return message.reply("Bug seccesvol ingezonden!");
 
     message.delete({ timeout: 1000 });
 

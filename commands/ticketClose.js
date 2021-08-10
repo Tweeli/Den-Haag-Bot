@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
 
     } else {
 
-        message.lineReply("Gelieve dit command te doen bij een ticket.");
+        message.reply("Gelieve dit command te doen bij een ticket.");
 
     }
 

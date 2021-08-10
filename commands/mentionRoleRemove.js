@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     
     message.member.roles.remove(trainingsRole.id);
 
-    return message.lineReply("De mention role is weggehaalt!")
+    return message.reply("De mention role is weggehaalt!")
 
 }
 

@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     let antwoorden = ["Hoi.", "Hoi!", "Hallo.", "Hallo!", "Hi.", "Hi!", "Hoi, hoe gaat het?", "Hoi, hoe gaat ie?"];
     let resultaat = Math.floor((Math.random() * antwoorden.length));
 
-   message.lineReply(`${antwoorden[resultaat]}`)
+   message.reply(`${antwoorden[resultaat]}`)
 
 }
 

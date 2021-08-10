@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
     
     
 
-    return message.lineReply("Suggestie seccesvol ingezonden!")
+    return message.reply("Suggestie seccesvol ingezonden!")
 
   
     message.delete({ timeout: 1000 });

@@ -30,7 +30,7 @@ const afmeldEmbed = new discord.MessageEmbed()
         .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 var msg = await afmelden.send(afmeldEmbed);
 await message.member.roles.add(afmeldRole.id);
-return message.lineReply("U bent succesvol afgemeld.")
+return message.reply("U bent succesvol afgemeld.")
 
 }
 

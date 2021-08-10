@@ -4,13 +4,13 @@ module.exports.run = async (bot, message, args) => {
 
     var categoryID = "784414133051064390";
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.lineReply("Jij kan dit niet doen.");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Jij kan dit niet doen.");
 
-    if (message.channel.parentID != categoryID) return message.lineReply("Dit command kan je alleen uitvoeren in een ticket.");
+    if (message.channel.parentID != categoryID) return message.reply("Dit command kan je alleen uitvoeren in een ticket.");
 
     var addUser = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
 
-    if (!addUser) return message.lineReply("Geen gebruiker meegegeven.")
+    if (!addUser) return message.reply("Geen gebruiker meegegeven.")
 
     var embedPromt = new discord.MessageEmbed()
         .setColor("#6aa75e")

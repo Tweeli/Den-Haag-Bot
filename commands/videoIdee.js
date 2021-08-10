@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     
     
 
-    return message.lineReply("Video idee seccesvol ingezonden!")
+    return message.reply("Video idee seccesvol ingezonden!")
 
   
     message.delete({ timeout: 1000 });

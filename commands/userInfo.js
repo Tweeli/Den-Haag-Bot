@@ -29,7 +29,7 @@ module.exports.run = async(bot, message, args) => {
         .addField(`Rollen [${roles}]`, `${roleNames}`)
         .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
-    message.lineReply(userinfoEmbed);
+    message.reply(userinfoEmbed);
 }
 
 module.exports.help = {

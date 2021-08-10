@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
         });
 
     } else {
-        return message.lineReply("Geef een getal op.").then(msg => msg.delete({ timeout: 3000 }));
+        return message.reply("Geef een getal op.").then(msg => msg.delete({ timeout: 3000 }));
     }
 
 }

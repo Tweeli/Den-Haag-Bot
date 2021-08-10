@@ -306,7 +306,7 @@ bot.on('message', async message => {
 
 	if (message.author.bot) return;
 
-	if (message.channel.type === "dm") return message.lineReply("Bot commands kunnen niet in dm uitgevoerd worden.")
+	if (message.channel.type === "dm") return message.reply("Bot commands kunnen niet in dm uitgevoerd worden.")
 
 	var swearWords = JSON.parse(fs.readFileSync("./data/swearWords.json"))
 

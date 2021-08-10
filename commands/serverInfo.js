@@ -23,7 +23,7 @@ module.exports.run = async(bot, message, args) => {
      .addField(`Rollen:`, `Deze server telt **${roles} rollen**. Voor meer info over de rollen kunt u !rollen doen.`)
      .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
-     message.lineReply(serverinfoEmbed);
+     message.reply(serverinfoEmbed);
 
 
 

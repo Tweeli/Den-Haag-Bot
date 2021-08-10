@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
      .setColor('#6aa75e')
      .setTimestamp()
      .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
-     message.lineReply(gameEmbed);
+     message.reply(gameEmbed);
 
 }
 
