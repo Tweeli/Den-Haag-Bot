@@ -6,11 +6,10 @@ const fs = require('fs');
 
 //client.
 const bot = new Client({
-	makeCache: Options.cacheWithLimits({
-		MessageManager: 200, // This is default
-		PresenceManager: 0,
-		// Add more class names here
-	}),
+	makeCache: manager => {
+		if (manager.name === 'MessageManager') return new LimitedCollection({ maxSize: 0 });
+		return new Collection();
+	},
 });
 
 //Command handler
