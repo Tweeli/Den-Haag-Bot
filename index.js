@@ -1,4 +1,3 @@
-const linereply = require('discord-reply');
 const discord = require('discord.js');
 const fetch = require("node-fetch")
 const botConfig = require('./botconfig.json');
