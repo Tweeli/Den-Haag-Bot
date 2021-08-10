@@ -5,8 +5,12 @@ const levelFile = require('./data/levels.json')
 const fs = require('fs');
 
 //client.
-const bot = new discord.Client({
-	partails: ['MESSAGE', 'CHANNEL', 'REACTION']
+const bot = new Client({
+	makeCache: Options.cacheWithLimits({
+		MessageManager: 200, // This is default
+		PresenceManager: 0,
+		// Add more class names here
+	}),
 });
 
 //Command handler
