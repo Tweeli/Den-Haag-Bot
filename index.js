@@ -3,12 +3,10 @@ const fetch = require("node-fetch")
 const botConfig = require('./botconfig.json');
 const levelFile = require('./data/levels.json')
 const fs = require('fs');
-const { Client, Intents } = require('discord.js')
 
 //client.
-const bot = new discord.Client({
-	partails: ['MESSAGE', 'CHANNEL', 'REACTION']
-});
+const intents = new discord.Intents(32767);
+const bot = new discord.Client({ intents });
 
 //Command handler
 bot.commands = new discord.Collection();
