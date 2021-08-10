@@ -19,7 +19,7 @@ module.exports.run = async(bot, message, args) => {
    .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png')
    .setTimestamp()
 
-   message.lineReply(eightBallEmbed);
+   message.reply(eightBallEmbed);
 
 }
 

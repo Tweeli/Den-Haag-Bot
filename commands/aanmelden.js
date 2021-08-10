@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
     message.member.roles.remove(afmeldRole.id);
 
     afmelden.send(`${message.author}, u bent weer aangemeld!`);
-    return message.lineReply("U bent succesvol aangemeld.")
+    return message.reply("U bent succesvol aangemeld.")
 
 }
 
