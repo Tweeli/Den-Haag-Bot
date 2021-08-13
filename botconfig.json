@@ -1,4 +1,3 @@
 {
-    "prefix": "!",
-    "MONGODB_SRV": "mongodb+srv://TristanS:sloddervos@denhaagbot.xpwfr.mongodb.net/DiscordBotDBWarns?retryWrites=true&w=majority"
+    "prefix": "!"
 }
