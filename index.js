@@ -134,7 +134,7 @@ fs.readdir('./all/ticket', (err, files) => {
 bot.on('ready', async () => {
 	console.log(`${bot.user.username} Is online!`);
 
-	bot.user.setActivity('Tweeli.#0001.', { type: 'LISTENING' });
+	bot.user.setActivity('Tristan#5000', { type: 'LISTENING' });
 });
 
 
@@ -155,7 +155,7 @@ bot.on("messageDelete", messageDeleted => {
 		.setColor('#6aa75e')
 		.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
 
-	bot.channels.cache.get('871799202055868477').send(deletedContentEmbed);
+	bot.channels.cache.get('871799202055868477').send({embeds: [deletedContentEmbed]});
 
 
 });
@@ -174,7 +174,7 @@ bot.on("messageUpdate", async (oldMessage, newMessage) => {
 		.setColor('#6aa75e')
 		.setTimestamp()
 		.setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
-	bot.channels.cache.get('871799202055868477').send(newMessageEmbed);
+	bot.channels.cache.get('871799202055868477').send({embeds: [newMessageEmbed]});
 
 })
 
@@ -184,9 +184,9 @@ bot.on('messageCreate', async message => {
 
 	if (message.author.bot) return;
 
-	if (message.channel.type === "dm") return message.reply("Bot commands kunnen niet in dm uitgevoerd worden.")
+	if (message.channel.type === "dm") return message.reply("Bot commands kunnen niet in dm uitgevoerd worden.");
 
-	var swearWords = JSON.parse(fs.readFileSync("./data/swearWords.json"))
+	var swearWords = JSON.parse(fs.readFileSync("./data/swearWords.json"));
 
 
 
@@ -195,11 +195,11 @@ bot.on('messageCreate', async message => {
 	for (let i = 0; i < swearWords["vloekwoorden"].length; i++) {
 
 		if (msg.includes(swearWords["vloekwoorden"][i])) {
-			if (message.member.hasPermission("MANAGE_MESSAGES")) return
+
+			if (message.author.bot) return;
+			if (!message.member.roles.cache.has('682635913431482471')) return;
 
 			message.delete();
-
-			return message.reply("Gelieve niet te schelden.").then(msg => msg.delete({ timeout: 3000 }))
 		}
 
 	}
@@ -215,10 +215,8 @@ bot.on('messageCreate', async message => {
 	var arguments = messageArray.slice(1);
 
 	var commands = bot.commands.get(command.slice(prefix.length)) || bot.commands.get(bot.aliases.get(command.slice(prefix.length)));
-
-	if (commands) commands.run(bot, message, arguments);
 });
 
 
-//bot.login(botConfig.token);
-bot.login(process.env.token);
+bot.login(botConfig.token);
+//bot.login(process.env.token);

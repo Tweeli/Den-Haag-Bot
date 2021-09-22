@@ -1,19 +1,43 @@
-const discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
- module.exports.run = async (bot, message, args) => {
+module.exports.run = async(bot, message, args) => {
+    
+    const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
+    if (!role) {
+      const roles = message.guild.roles.cache
+          .filter((r) => r.id !== message.guild.id)
+          .map((r) => r)
+          .join(",\n") || "None";
 
-     var roles = message.guild.roles.cache.size - 1
+      const embed = new MessageEmbed()
+        .setTitle(`${message.guild.name}'s Roles`)
+        .setDescription(`${roles.length > 2048 ? roles.slice(0, 2030) + "..." : roles}`)
+        .setTimestamp()
+        .setFooter(message.author.username)
+        .setColor("BLUE");
 
-    var rolesEmbed = new discord.MessageEmbed()
-    .setTitle('Rollen Den Haag Stad.')
-    .setDescription(`Rollen: [${roles}] ${message.guild.roles.cache.map(r => r).join(" ").replace("@everyone", "")}`)
-    .setFooter('TeamDJD | Den Haag Stad V2', 'https://cdn.discordapp.com/attachments/755878713668796446/872847136478351380/image0.png');
-         
-    message.reply({embeds: [rolesEmbed]})
+      message.channel.send({embeds:[embed]});
+    } else {
+      let membersWithRole = message.guild.members.cache
+        .filter((member) => {
+          return member.roles.cache.find((r) => r.name === role.name);
+        })
+        .map((member) => {
+          return member.user.tag;
+        });
+      if (membersWithRole > 2048)
+        return message.channel.send("**List Is Too Long!**");
 
-}
+      let roleEmbed = new MessageEmbed()
+        .setColor("GREEN")
+        .setThumbnail(message.guild.iconURL())
+        .setTitle(`Users With The ${role.name} Role!`)
+        .setDescription(membersWithRole.join("\n"));
+      message.channel.send({embeds: [roleEmbed]});
+    }
+  }
 
 module.exports.help = {
-    name: "rollen",
-    aliases: ["roles"]
+    name: "testt",
+    aliases: []
 }
