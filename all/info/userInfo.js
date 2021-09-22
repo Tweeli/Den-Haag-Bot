@@ -16,9 +16,9 @@ module.exports.run = async(bot, message, args) => {
     if(nickName == null || undefined) nickName = "Geen.";
 
     var userinfoEmbed = new discord.MessageEmbed()
-        .setAuthor(`${member.author.tag}`, `${message.author.avatarURL({ size: 4096 })}`)
+        .setAuthor(`${message.author.tag}`, `${message.author.avatarURL({ size: 4096 })}`)
         .setColor("#6aa75e")
-        .setDescription(`${member}`)
+        .setDescription(`${message.author}`)
         .setThumbnail(member.user.displayAvatarURL({size: 4096}))
         .addField("ID", `${member.id}`, true)
         .addField("Bijnaam", nickName, true)
