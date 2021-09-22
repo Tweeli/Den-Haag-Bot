@@ -218,5 +218,5 @@ bot.on('messageCreate', async message => {
 });
 
 
-bot.login(botConfig.token);
-//bot.login(process.env.token);
+//bot.login(botConfig.token);
+bot.login(process.env.token);
