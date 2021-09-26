@@ -13,7 +13,7 @@ bot.commands = new discord.Collection();
 bot.aliases = new discord.Collection();
 
 //Command Handler.
-fs.readdir('./all/fun', (err, files) => {
+fs.readdir('./commands', (err, files) => {
 	if (err) console.log(err);
 
 	var jsFiles = files.filter(f => f.split('.').pop() === 'js');
@@ -25,7 +25,7 @@ fs.readdir('./all/fun', (err, files) => {
 
 	jsFiles.forEach((f, i) => {
 
-		var fileGet = require(`./all/fun/${f}`);
+		var fileGet = require(`./commands/${f}`);
 		console.log(`De file ${f} is geladen.`);
 
 		bot.commands.set(fileGet.help.name, fileGet);
@@ -35,79 +35,6 @@ fs.readdir('./all/fun', (err, files) => {
 		})
 	});
 });
-
-//Command Handler.
-fs.readdir('./all/info', (err, files) => {
-	if (err) console.log(err);
-
-	var jsFiles = files.filter(f => f.split('.').pop() === 'js');
-
-	if (jsFiles.length <= 0) {
-		console.log('Kon geen files vinden.');
-		return;
-	}
-
-	jsFiles.forEach((f, i) => {
-
-		var fileGet = require(`./all/info/${f}`);
-		console.log(`De file ${f} is geladen.`);
-
-		bot.commands.set(fileGet.help.name, fileGet);
-
-		fileGet.help.aliases.forEach(alias => {
-			bot.aliases.set(alias, fileGet.help.name);
-		})
-	});
-});
-
-//Command Handler.
-fs.readdir('./all/staff', (err, files) => {
-	if (err) console.log(err);
-
-	var jsFiles = files.filter(f => f.split('.').pop() === 'js');
-
-	if (jsFiles.length <= 0) {
-		console.log('Kon geen files vinden.');
-		return;
-	}
-
-	jsFiles.forEach((f, i) => {
-
-		var fileGet = require(`./all/staff/${f}`);
-		console.log(`De file ${f} is geladen.`);
-
-		bot.commands.set(fileGet.help.name, fileGet);
-
-		fileGet.help.aliases.forEach(alias => {
-			bot.aliases.set(alias, fileGet.help.name);
-		})
-	});
-});
-
-//Command Handler.
-fs.readdir('./all/ticket', (err, files) => {
-	if (err) console.log(err);
-
-	var jsFiles = files.filter(f => f.split('.').pop() === 'js');
-
-	if (jsFiles.length <= 0) {
-		console.log('Kon geen files vinden.');
-		return;
-	}
-
-	jsFiles.forEach((f, i) => {
-
-		var fileGet = require(`./all/ticket/${f}`);
-		console.log(`De file ${f} is geladen.`);
-
-		bot.commands.set(fileGet.help.name, fileGet);
-
-		fileGet.help.aliases.forEach(alias => {
-			bot.aliases.set(alias, fileGet.help.name);
-		})
-	});
-});
-
 
 //Welkom's bericht.
 //bot.on("guildMemberAdd", member => {
